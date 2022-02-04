@@ -8,15 +8,15 @@ public class UncheckedException {
         String a = JOptionPane.showInputDialog("Numerador: ");
         String b = JOptionPane.showInputDialog("Denominador: ");
 
-        try{
+        try {
             int resultado = dividir(Integer.parseInt(a), Integer.parseInt(b));
             System.out.println("Resultado: " + resultado);
         } catch (NumberFormatException e) {
-
-            JOptionPane.showMessageDialog(null,"Entrada inválida, informe um número inteiro" + e.getMessage());
-
-
-            //e.printStackTrace();
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(null, "Entrada inválida, informe um número inteiro" + e.getMessage());
+        } catch (ArithmeticException e) {
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(null, "Impossível um número por 0" + e.getMessage());
         } finally {
             System.out.println("Chegou no Finally");
         }
