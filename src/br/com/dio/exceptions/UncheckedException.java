@@ -12,7 +12,11 @@ public class UncheckedException {
             int resultado = dividir(Integer.parseInt(a), Integer.parseInt(b));
             System.out.println("Resultado: " + resultado);
         } catch (NumberFormatException e) {
-            e.printStackTrace();
+
+            JOptionPane.showMessageDialog(null,"Entrada inválida, informe um número inteiro" + e.getMessage());
+
+
+            //e.printStackTrace();
         } finally {
             System.out.println("Chegou no Finally");
         }
